@@ -40,6 +40,7 @@ export class ShowriderComponent {
     }
     else
     {
+      console.log("Create mode");
       this.InitilizeForm();
     }
   }
@@ -60,8 +61,8 @@ InitilizeForm()
   }
   else
   {
-    {
-      this.riderForm = new FormGroup(
+    this.currentRider = {};
+    this.riderForm = new FormGroup(
       {
         name: new FormControl(""),
         email: new FormControl(""),
@@ -70,7 +71,6 @@ InitilizeForm()
         emirateId: new FormControl(""),
         passportNumber: new FormControl(""), 
       });
-    }
   }
 }
 
@@ -91,7 +91,6 @@ InitilizeForm()
     {
       this.isenable = true;
       this.isNew = true;
-      console.info("Create Mode");
     }
     else{
       this.isenable = false;

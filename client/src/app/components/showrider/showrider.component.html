@@ -4,7 +4,7 @@
     <div class="col-md-12 col-lg-12">
       <h4 class="mb-3">Rider's details</h4>
       <form [formGroup]="riderForm" class="needs-validation" novalidate="" (ngSubmit)="submitRider()"> 
-        <fieldset [disabled]="!isenable">
+        <fieldset [disabled]="!isenable" *ngIf="currentRider">
         <div class="row g-3">
           <div class="col-sm-6">
             <label for="firstName" class="form-label">Name</label>
