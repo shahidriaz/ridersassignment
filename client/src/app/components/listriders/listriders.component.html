@@ -1,0 +1,33 @@
+<div class="container addTopSpacing">
+    <div class="table-responsive">
+      <div class="container">
+        <button class="btn btn-primary" style="float: right;" (click)="createRider()">Create Rider</button>
+      </div>
+        <table class="table table-hover table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Personal Number</th>
+              <th scope="col">EmirateId</th>
+              <th scope="col">LicenseNumber</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of allRiders">
+              <th>{{ item.id }}</th>
+              <td>{{ item.name }}</td>
+              <td>{{ item.personalNumber }}</td>
+              <td>{{item.emirateId}}</td>
+              <td>{{item.licenseNumber}}</td>
+              <td>
+                <button type="button" class="btn btn-info btn-sm" (click)="showDetails(item.id)">Detail</button>
+                <button type="button" class="btn btn-primary btn-outline btn-sm" style="margin-left: 5px;" (click)="editRider(item.id)">Edit</button>
+                <button type="button" class="btn btn-danger btn-outline btn-sm" style="margin-left: 5px;" (click)="deleteRider(item.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="container addTopSpacing">
+    <div class="row g-12">
+      <div class="col-md-12 col-lg-12">
+        <h4 class="mb-3">Rider's details</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row g-3" *ngIf="currentRider">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Name" value="{{currentRider.name}}" required="">
+              <div class="invalid-feedback">
+                Valid name is required.
+              </div>
+            </div>
+          
+            <div class="col-6">
+              <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
+              <input value="{{currentRider.email}}" type="email" class="form-control" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+  
+            <!-- <div class="col-12">
+              <label for="address" class="form-label">Address</label>
+              <input type="text" disabled="true" class="form-control"
+               id="address" placeholder="1234 Main St" required="">
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div> -->
+  
+            <div class="col-6">
+              <label for="companyNumber" class="form-label">Company Number</label>
+              <input value="{{currentRider.companyNumber}}" type="text" class="form-control" id="companyNumber" 
+              placeholder="Company Number">
+            </div>
+  
+            
+            <div class="col-6">
+              <label for="personalNumber" class="form-label">Personal Number</label>
+              <input value="{{currentRider.personalNumber}}" type="text" class="form-control" id="personalNumber" placeholder="Personal Number">
+            </div>
+  
+            
+            <div class="col-6">
+              <label for="EmirateId" class="form-label">EmirateId</label>
+              <input value="{{currentRider.emirateId}}" type="text"  class="form-control" id="EmirateId" placeholder="EmirateId">
+            </div>
+  
+            <div class="col-6">
+              <label for="passportNumber" class="form-label">Passport Number</label>
+              <input value="{{currentRider.passportNumber}}"type="text"  class="form-control" id="passportNumber" 
+              placeholder="Passport Number">
+            </div>
+  
+            <div class="col-12" style="float: right;">
+              <button class="btn btn-primary btn-lg" style="margin-right: 10px;" (click)="BackToRiderListing()">Update</button>
+              <button class="btn btn-success btn-lg" (click)="editRider()">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>  
+  </div>
+  
+  

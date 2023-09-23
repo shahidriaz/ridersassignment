@@ -1,0 +1,71 @@
+
+<div class="container addTopSpacing">
+  <div class="row g-12">
+    <div class="col-md-12 col-lg-12">
+      <h4 class="mb-3">Rider's details</h4>
+      <form [formGroup]="riderForm" class="needs-validation" novalidate="" (ngSubmit)="submitRider()"> 
+        <fieldset [disabled]="!isenable">
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label for="firstName" class="form-label">Name</label>
+            <input formControlName="name" type="text" class="form-control" 
+            id="name" placeholder="Name" required="">
+            <div class="invalid-feedback">
+              Valid name is required.
+            </div>
+          </div>
+        
+          <div class="col-6">
+            <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
+            <input formControlName = "email" type="email" class="form-control" id="email" placeholder="you@example.com">
+            <div class="invalid-feedback">
+              Please enter a valid email address.
+            </div>
+          </div>
+
+          <!-- <div class="col-12">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" disabled="true" class="form-control"
+             id="address" placeholder="1234 Main St" required="">
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div> -->
+
+          <div class="col-6">
+            <label for="companyNumber" class="form-label">Company Number</label>
+            <input formControlName = "companyNumber" type="text" class="form-control" id="companyNumber" 
+            placeholder="Company Number">
+          </div>
+
+          
+          <div class="col-6">
+            <label for="personalNumber" class="form-label">Personal Number</label>
+            <input formControlName = "personalNumber" type="text" class="form-control" id="personalNumber" placeholder="Personal Number">
+          </div>
+
+          
+          <div class="col-6">
+            <label for="EmirateId" class="form-label">EmirateId</label>
+            <input formControlName = "emirateId" type="text" class="form-control" id="EmirateId" placeholder="EmirateId">
+          </div>
+
+          <div class="col-6">
+            <label for="passportNumber" class="form-label">Passport Number</label>
+            <input formControlName = "passportNumber" type="text" class="form-control" id="passportNumber" 
+            placeholder="Passport Number">
+          </div>
+        </div>
+      </fieldset>
+      <div class="col-12" style="float: right; margin-top: 20px;">
+        <button class="btn btn-primary btn-lg" style="margin-right: 10px;" (click)="BackToRiderListing()">Back</button>
+        <button *ngIf="!isenable" class="btn btn-success btn-lg" (click)="editRider(currentRider.id)">Edit</button>
+        <button type="submit" *ngIf="isenable && !isNew" class="btn btn-success btn-lg">Update</button>
+        <button type="submit" *ngIf="!isenable"  class="btn btn-danger btn-lg" style="margin-left: 10px;">Delete</button>
+        <button type="submit" *ngIf="isNew"  class="btn btn-danger btn-lg" style="margin-left: 10px;">Create</button>
+      </div>
+      </form>
+    </div>
+  </div>  
+</div>
+
