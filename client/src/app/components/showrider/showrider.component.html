@@ -6,13 +6,13 @@
         <fieldset [disabled]="!isenable" *ngIf="currentRider">
           <div class="row g-3">
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">Name</label>
-              <input formControlName="name" type="text" class="form-control" id="name" placeholder="Name" required="">
+              <label for="firstName" class="form-label">Rider Full Name</label>
+              <input formControlName="name" type="text" class="form-control" id="name" placeholder="Rider Full Name" required="">
               <div class="invalid-feedback">
                 Valid name is required.
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-3">
               <label for="Rider ID" class="form-label">Rider ID</label>
               <input formControlName="Rider ID" type="text" class="form-control" id="Rider ID" placeholder="Rider ID"
                 required="">
@@ -21,67 +21,67 @@
               </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-3">
               <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
               <input formControlName="email" type="email" class="form-control" id="email" placeholder="you@example.com">
               <div class="invalid-feedback">
                 Please enter a valid email address.
               </div>
             </div>
-            <div class="col-6">
-              <label for="address" class="form-label">address <span
-                  class="text-body-secondary">(Optional)</span></label>
-              <input formControlName="address" type="address" class="form-control" id="address"
-                placeholder="Address">
-              <!-- <div class="invalid-feedback">
-              Please enter a valid email address.
-            </div> -->
-            </div>
+            
 
-          
 
-          <div class="col-6">
-            <label for="address" class="form-label">Address</label>
-            <input type="text" disabled="true" class="form-control"
-             id="address" placeholder="1234 Main St" required="">
-            <div class="invalid-feedback">
-              Please enter your shipping address.
-            </div>
-          </div> 
 
             <div class="col-6">
+              <label for="address" class="form-label">Address</label>
+              <input type="text" disabled="true" class="form-control"
+               id="address" placeholder="1234 Main St" required="">
+             <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div> 
+
+            <div class="col-3">
               <label for="companyNumber" class="form-label">Company Number</label>
               <input formControlName="companyNumber" type="text" class="form-control" id="companyNumber"
                 placeholder="Company Number">
             </div>
 
 
-            <div class="col-6">
+            <div class="col-3">
               <label for="personalNumber" class="form-label">Personal Number</label>
               <input formControlName="personalNumber" type="text" class="form-control" id="personalNumber"
                 placeholder="Personal Number">
             </div>
 
 
-            <div class="col-6">
+            <div class="col-3">
               <label for="Emirates ID" class="form-label">Emirates ID</label>
               <input formControlName="emirates Id" type="text" class="form-control" id="Emirates Id"
                 placeholder="EmirateId">
             </div>
-            <div class="col-6">
-              <label for="Date" class="form-label">Date</label>
-              <input formControlName="Date" type="date" class="form-control" id="Date">
+            <div class="col-3">
+              <label for="Issue Date" class="form-label">Issue Date</label>
+              <input formControlName="Issue Date" type="date" class="form-control" id="Issue Date">
             </div>
-            <div class="col-6">
+            <div class="col-3">
+              <label for="Expiry Date" class="form-label">Expiry Date</label>
+              <input formControlName="Expiry Date" type="date" class="form-control" id="Expiry Date">
+            </div>
+            <div class="col-3">
               <label for="Labour Card" class="form-label">Labour Card</label>
               <input formControlName="Labour Card" type="text" class="form-control" id="Labour Card"
                 placeholder="Labour Card">
             </div>
-            <div class="col-6">
-              <label for="Date" class="form-label">Date</label>
-              <input formControlName="Date" type="date" class="form-control" id="Date">
+            <div class="col-3">
+              <label for="Issue Date" class="form-label">Issue Date</label>
+              <input formControlName="Issue Date" type="date" class="form-control" id="Issue Date">
             </div>
-            <div class="col-6">
+            <div class="col-3">
+              <label for="Expiry Date" class="form-label">Expiry Date</label>
+              <input formControlName="Expiry Date" type="date" class="form-control" id="Expiry Date">
+            </div>
+            <div class="col-3">
               <label for="City" class="form-label"> Working City</label>
               <select formControlName="City" class="form-select" id="City">
                 <option value="Sharjah">Sharjah</option>
@@ -92,7 +92,7 @@
                 <option value="Ras Al Khaimah">Ras Al Khaimah</option>
               </select>
             </div>
-            <div class="col-6">
+            <div class="col-3">
               <label for="WorkingStatus" class="form-label">Working Status</label>
               <select formControlName="WorkingStatus" class="form-select" id="WorkingStatus">
                 <option value="Active">Active</option>
@@ -101,7 +101,7 @@
                 <option value="Left">Left</option>
               </select>
             </div>
-            <div class="col-6">
+            <div class="col-3">
               <label for="VisaSponsor" class="form-label">Visa Sponsor</label>
               <select formControlName="VisaSponsor" class="form-select" id="VisaSponsor">
                 <option value="247 On Time">247 On Time</option>
@@ -110,7 +110,7 @@
                 <option value="Other">Other</option>
               </select>
             </div>
-            <div class="col-6">
+            <div class="col-3">
               <label for="Visa Category" class="form-label">Visa Category</label>
               <select formControlName="Visa Category" class="form-select" id="Visa Category">
                 <option value="Bike Rider">Bike Rider</option>
@@ -123,28 +123,19 @@
 
 
 
-            <div class="col-6">
+            <div class="col-3">
               <label for="passportNumber" class="form-label">Passport Number</label>
               <input formControlName="passportNumber" type="text" class="form-control" id="passportNumber"
                 placeholder="Passport Number">
             </div>
-          </div>
-             <div class="col-3">
-               <label for="Issue Date" class="form-label">Issue Date</label>
-               <input formControlName="Issue Date" type="date" class="form-control" id="Issue Date">
-             </div>
-             <div class="col-3">
-               <label for="Expiry Date" class="form-label">Expiry Date</label>
-               <input formControlName="Expiry Date" type="date" class="form-control" id="Expiry Date">
-             </div>
-          <div class="col-6">
-            <label for="VisaSponsor" class="form-label">Visa Sponsor</label>
-            <select formControlName="VisaSponsor" class="form-select" id="VisaSponsor">
-              <option value="247 On Time">247 On Time</option>
-              <option value="Feni Top">Feni Top</option>
-              <option value="TT Delivery">TT Delivery</option>
-              <option value="Other">Other</option>
-            </select>
+            <div class="col-3">
+              <label for="Issue Date" class="form-label">Issue Date</label>
+              <input formControlName="Issue Date" type="date" class="form-control" id="Issue Date">
+            </div>
+            <div class="col-3">
+              <label for="Expiry Date" class="form-label">Expiry Date</label>
+              <input formControlName="Expiry Date" type="date" class="form-control" id="Expiry Date">
+            </div>
           </div>
         </fieldset>
         <div class="col-12" style="float: right; margin-top: 20px;">
