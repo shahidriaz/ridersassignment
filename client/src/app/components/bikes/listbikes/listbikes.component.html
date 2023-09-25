@@ -1,129 +1,31 @@
 <div class="container addTopSpacing">
-    <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Name</th>
-              <th scope="col">Personal Number</th>
-              <th scope="col">EmirateId</th>
-              <th scope="col">LicenseNumber</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,002</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,004</td>
-              <td>text</td>
-              <td>random</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,005</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>placeholder</td>
-            </tr>
-            <tr>
-              <td>1,006</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,007</td>
-              <td>placeholder</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>irrelevant</td>
-            </tr>
-            <tr>
-              <td>1,008</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,009</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,010</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,011</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,012</td>
-              <td>text</td>
-              <td>placeholder</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,013</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>visual</td>
-            </tr>
-            <tr>
-              <td>1,014</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,015</td>
-              <td>random</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>text</td>
-            </tr>
-          </tbody>
-        </table>
+  <div class="table-responsive">
+    <div class="container">
+      <button class="btn btn-primary" style="float: right;" (click)="createRider()">Create Bike</button>
     </div>
+      <table class="table table-hover table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Bike Model</th>
+            <th scope="col">Engine Power</th>
+            <th scope="col">Bike Number</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of allBikes">
+            <th>{{ item.id }}</th>
+            <td>{{ item.bikeModel }}</td>
+            <td>{{ item.enginePower }}</td>
+            <td>{{item.bikeNumber}}</td>
+            <td>
+              <button type="button" class="btn btn-info btn-sm" (click)="showDetails(item.id)">Detail</button>
+              <button type="button" class="btn btn-primary btn-outline btn-sm" style="margin-left: 5px;" (click)="editRider(item.id)">Edit</button>
+              <button type="button" class="btn btn-danger btn-outline btn-sm" style="margin-left: 5px;" (click)="deleteRider(item.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
 </div>

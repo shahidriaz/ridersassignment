@@ -8,6 +8,7 @@ public class DataContext : DbContext
     }
     public DbSet<Rider> Riders { get; set; }
     public DbSet<Bike> Bikes { get; set; }
+    public DbSet<AppUser> Users { get; set; }
 
     public DbSet<RiderBikeAssociation> RiderBikeAssociations { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
