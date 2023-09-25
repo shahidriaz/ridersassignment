@@ -68,8 +68,12 @@
               <input formControlName="lbissuedate" type="date" class="form-control" id="lbissuedate">
             </div>
             <div class="col-2">
-              <label for="lbexpiredate" class="form-label">Expiry Date</label>
-              <input formControlName="lbexpiredate" type="date" class="form-control" id="lbexpiredate">
+              <label for="lbExpiredate" class="form-label">Expiry Date</label>
+              <!-- <input formControlName="lbExpiredate" type="text" class="form-control" id="lbExpiredate"> -->
+
+              <input type="date" formControlName="lbExpiredate" value="{{ currentRider.lbExpiredate | date:'yyyy-MM-dd' }}" class="form-control" id="lbExpiredate">
+
+
             </div>
             <!-- <div class="col-6">
               <label for="City" class="form-label"> Working City</label>

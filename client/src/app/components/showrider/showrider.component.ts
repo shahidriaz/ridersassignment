@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { RiderService } from 'src/app/__services/rider.service';
 import {FormGroup, FormControl, FormsModule} from '@angular/forms'
+import { formatDate } from '@angular/common' 
+
 
 
 @Component({
@@ -49,6 +51,8 @@ InitilizeForm()
 {
   if(this.currentRider != null)
   {
+    console.log("Logging Current Rider");
+    console.info(this.currentRider);
     this.riderForm = new FormGroup(
     {
       name: new FormControl(this.currentRider.name),
@@ -59,12 +63,13 @@ InitilizeForm()
       passportNumber: new FormControl(this.currentRider.passportNumber), 
       licensenumber: new FormControl(this.currentRider.licenseNumber),
       rriderid: new FormControl(this.currentRider.rriderId),
-      emissuedate: new FormControl(this.currentRider.emIssuedate),
-      emexpiredate: new FormControl(this.currentRider.emExpiredate),
+      emissuedate: new FormControl(formatDate(this.currentRider.emIssuedate,'yyyy-MM-dd','en')),
+      emexpiredate: new FormControl(formatDate(this.currentRider.emExpiredate,'yyyy-MM-dd','en')),
       labourCard: new FormControl(this.currentRider.labourCard),
-      lbissuedate: new FormControl(this.currentRider.lbIssuedate),
-      lbexpiredate: new FormControl(this.currentRider.lbExpiredate)
+      lbissuedate: new FormControl(formatDate(this.currentRider.lbIssuedate,'yyyy-MM-dd','en')),
+      lbExpiredate: new FormControl(formatDate(this.currentRider.lbExpiredate,'yyyy-MM-dd','en'))
     });
+    
   }
   else
   {
