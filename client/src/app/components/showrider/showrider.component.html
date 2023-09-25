@@ -6,8 +6,8 @@
         <fieldset [disabled]="!isenable" *ngIf="currentRider">
           <div class="row g-3">
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">Name</label>
-              <input formControlName="name" type="text" class="form-control" id="name" placeholder="Name" required="">
+              <label for="firstName" class="form-label">Rider Full Name</label>
+              <input formControlName="name" type="text" class="form-control" id="name" placeholder="Rider Full Name" required="">
               <div class="invalid-feedback">
                 Valid name is required.
               </div>
@@ -21,7 +21,7 @@
               </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-3">
               <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
               <input formControlName="email" type="email" class="form-control" id="email" placeholder="you@example.com">
               <div class="invalid-feedback">
@@ -38,7 +38,7 @@
             </div>
 
 
-            <div class="col-6">
+            <div class="col-3">
               <label for="personalNumber" class="form-label">Personal Number</label>
               <input formControlName="personalNumber" type="text" class="form-control" id="personalNumber"
                 placeholder="Personal Number">
@@ -86,7 +86,7 @@
                 <option value="Ras Al Khaimah">Ras Al Khaimah</option>
               </select>
             </div>
-            <div class="col-6">
+            <div class="col-3">
               <label for="WorkingStatus" class="form-label">Working Status</label>
               <select formControlName="WorkingStatus" class="form-select" id="WorkingStatus">
                 <option value="Active">Active</option>
@@ -95,7 +95,7 @@
                 <option value="Left">Left</option>
               </select>
             </div>
-            <div class="col-6">
+            <div class="col-3">
               <label for="VisaSponsor" class="form-label">Visa Sponsor</label>
               <select formControlName="VisaSponsor" class="form-select" id="VisaSponsor">
                 <option value="247 On Time">247 On Time</option>
@@ -104,7 +104,7 @@
                 <option value="Other">Other</option>
               </select>
             </div>
-            <div class="col-6">
+            <div class="col-3">
               <label for="Visa Category" class="form-label">Visa Category</label>
               <select formControlName="Visa Category" class="form-select" id="Visa Category">
                 <option value="Bike Rider">Bike Rider</option>
