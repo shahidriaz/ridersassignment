@@ -52,15 +52,19 @@ namespace API.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    // targetedRider.PersonalNumber = rider.PersonalNumber;
-                    // targetedRider.LicenseNumber = rider.LicenseNumber;
-                    // targetedRider.CompanyNumber = rider.CompanyNumber;
-                    // targetedRider.PassportNumber = rider.PassportNumber;
-                    // targetedRider.Email = rider.Email;
-                    // targetedRider.EmirateId = rider.EmirateId;
-                    // targetedRider.Name = rider.Name;
-                    // targetedRider.LabourCard = rider.LabourCard;
-                    targetedRider = rider;
+                    targetedRider.PersonalNumber = rider.PersonalNumber;
+                    targetedRider.LicenseNumber = rider.LicenseNumber;
+                    targetedRider.CompanyNumber = rider.CompanyNumber;
+                    targetedRider.PassportNumber = rider.PassportNumber;
+                    targetedRider.Email = rider.Email;
+                    targetedRider.EmirateId = rider.EmirateId;
+                    targetedRider.Name = rider.Name;
+                    targetedRider.LabourCard = rider.LabourCard;
+                    targetedRider.EmExpiredate = rider.EmExpiredate;
+                    targetedRider.LbExpiredate = rider.LbExpiredate;
+                    targetedRider.LbIssuedate = rider.LbIssuedate;
+                    targetedRider.EmIssuedate = rider.EmIssuedate;
+                    targetedRider.RriderId = rider.RriderId;
                     try
                     {
                         await _dataContext.SaveChangesAsync();
