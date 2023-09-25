@@ -23,6 +23,7 @@ export class RiderService {
   }
   updateRider(id:number, data:string)
   {
+    console.info(data);
     return this.http.put(this.baseUrl + "/rider/" + id, data);
   }
   createRider(data:string)

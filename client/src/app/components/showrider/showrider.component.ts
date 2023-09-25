@@ -57,6 +57,13 @@ InitilizeForm()
       personalNumber: new FormControl(this.currentRider.personalNumber),
       emirateId: new FormControl(this.currentRider.emirateId),
       passportNumber: new FormControl(this.currentRider.passportNumber), 
+      licensenumber: new FormControl(this.currentRider.licenseNumber),
+      rriderid: new FormControl(this.currentRider.rriderId),
+      emissuedate: new FormControl(this.currentRider.emIssuedate),
+      emexpiredate: new FormControl(this.currentRider.emExpiredate),
+      labourCard: new FormControl(this.currentRider.labourCard),
+      lbissuedate: new FormControl(this.currentRider.lbIssuedate),
+      lbexpiredate: new FormControl(this.currentRider.lbExpiredate)
     });
   }
   else
@@ -70,6 +77,13 @@ InitilizeForm()
         personalNumber: new FormControl(""),
         emirateId: new FormControl(""),
         passportNumber: new FormControl(""), 
+        licensenumber: new FormControl(""),
+        rriderid: new FormControl(""),
+        emissuedate: new FormControl(""),
+        emexpiredate: new FormControl(""),
+        labourCard: new FormControl(""),
+        lbissuedate: new FormControl(""),
+        lbexpiredate: new FormControl("")
       });
   }
 }
@@ -113,7 +127,7 @@ InitilizeForm()
     {
       // get the rider id
       console.log("Selected Rider is " + this.selectedRiderId);
-      console.log("Updated values " + this.riderForm.value);
+      // console.log("Updated values " + this.riderForm.value);
       this.riderService.updateRider(this.selectedRiderId, this.riderForm.value).subscribe({
         next: res=> console.log(res),
         error: error=>console.log(error),

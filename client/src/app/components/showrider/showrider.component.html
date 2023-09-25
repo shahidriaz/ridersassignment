@@ -13,8 +13,8 @@
               </div>
             </div>
             <div class="col-sm-6">
-              <label for="Rider ID" class="form-label">Rider ID</label>
-              <input formControlName="Rider ID" type="text" class="form-control" id="Rider ID" placeholder="Rider ID"
+              <label for="rriderid" class="form-label">Rider ID</label>
+              <input formControlName="rriderid" type="text" class="form-control" id="rriderid" placeholder="Rider ID"
                 required="">
               <div class="invalid-feedback">
                 Valid Rider ID is required.
@@ -28,27 +28,9 @@
                 Please enter a valid email address.
               </div>
             </div>
-            <div class="col-6">
-              <label for="address" class="form-label">address <span
-                  class="text-body-secondary">(Optional)</span></label>
-              <input formControlName="address" type="address" class="form-control" id="address"
-                placeholder="Address">
-              <!-- <div class="invalid-feedback">
-              Please enter a valid email address.
-            </div> -->
-            </div>
+            
 
           
-
-          <div class="col-6">
-            <label for="address" class="form-label">Address</label>
-            <input type="text" disabled="true" class="form-control"
-             id="address" placeholder="1234 Main St" required="">
-            <div class="invalid-feedback">
-              Please enter your shipping address.
-            </div>
-          </div> 
-
             <div class="col-6">
               <label for="companyNumber" class="form-label">Company Number</label>
               <input formControlName="companyNumber" type="text" class="form-control" id="companyNumber"
@@ -63,25 +45,33 @@
             </div>
 
 
-            <div class="col-6">
+            <div class="col-2">
               <label for="Emirates ID" class="form-label">Emirates ID</label>
-              <input formControlName="emirates Id" type="text" class="form-control" id="Emirates Id"
+              <input formControlName="emirateId" type="text" class="form-control" id="Emirates Id"
                 placeholder="EmirateId">
             </div>
-            <div class="col-6">
-              <label for="Date" class="form-label">Date</label>
-              <input formControlName="Date" type="date" class="form-control" id="Date">
+            <div class="col-2">
+              <label for="EmIssueDate" class="form-label">Issue Date</label>
+              <input formControlName="emissuedate" type="date" class="form-control" id="EmIssueDate">
             </div>
-            <div class="col-6">
-              <label for="Labour Card" class="form-label">Labour Card</label>
-              <input formControlName="Labour Card" type="text" class="form-control" id="Labour Card"
+            <div class="col-2">
+              <label for="emexpiredate" class="form-label">Expiry Date</label>
+              <input formControlName="emexpiredate" type="date" class="form-control" id="emexpiredate">
+            </div>
+            <div class="col-2">
+              <label for="labourCard" class="form-label">Labour Card</label>
+              <input formControlName="labourCard" type="text" class="form-control" id="labourCard"
                 placeholder="Labour Card">
             </div>
-            <div class="col-6">
-              <label for="Date" class="form-label">Date</label>
-              <input formControlName="Date" type="date" class="form-control" id="Date">
+            <div class="col-2">
+              <label for="lbissuedate" class="form-label">Issue Date</label>
+              <input formControlName="lbissuedate" type="date" class="form-control" id="lbissuedate">
             </div>
-            <div class="col-6">
+            <div class="col-2">
+              <label for="lbexpiredate" class="form-label">Expiry Date</label>
+              <input formControlName="lbexpiredate" type="date" class="form-control" id="lbexpiredate">
+            </div>
+            <!-- <div class="col-6">
               <label for="City" class="form-label"> Working City</label>
               <select formControlName="City" class="form-select" id="City">
                 <option value="Sharjah">Sharjah</option>
@@ -118,33 +108,18 @@
                 <option value="Marketing Manager">Marketing Manager</option>
                 <option value="Other">Other</option>
               </select>
-            </div>
-
-
-
-
+            </div> -->
             <div class="col-6">
               <label for="passportNumber" class="form-label">Passport Number</label>
               <input formControlName="passportNumber" type="text" class="form-control" id="passportNumber"
                 placeholder="Passport Number">
             </div>
-          </div>
-             <div class="col-3">
-               <label for="Issue Date" class="form-label">Issue Date</label>
-               <input formControlName="Issue Date" type="date" class="form-control" id="Issue Date">
-             </div>
-             <div class="col-3">
-               <label for="Expiry Date" class="form-label">Expiry Date</label>
-               <input formControlName="Expiry Date" type="date" class="form-control" id="Expiry Date">
-             </div>
-          <div class="col-6">
-            <label for="VisaSponsor" class="form-label">Visa Sponsor</label>
-            <select formControlName="VisaSponsor" class="form-select" id="VisaSponsor">
-              <option value="247 On Time">247 On Time</option>
-              <option value="Feni Top">Feni Top</option>
-              <option value="TT Delivery">TT Delivery</option>
-              <option value="Other">Other</option>
-            </select>
+            <div class="col-6">
+              <label for="licensenumber" class="form-label">Passport Number</label>
+              <input formControlName="licensenumber" type="text" class="form-control" id="licensenumber"
+                placeholder="License Number">
+            </div>
+            
           </div>
         </fieldset>
         <div class="col-12" style="float: right; margin-top: 20px;">
