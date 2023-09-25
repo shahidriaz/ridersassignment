@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { RiderService } from 'src/app/__services/rider.service';
 import {FormGroup, FormControl, FormsModule} from '@angular/forms'
+import { formatDate } from '@angular/common' 
+
 
 
 @Component({
@@ -49,6 +51,8 @@ InitilizeForm()
 {
   if(this.currentRider != null)
   {
+    console.log("Logging Current Rider");
+    console.info(this.currentRider);
     this.riderForm = new FormGroup(
     {
       name: new FormControl(this.currentRider.name),
@@ -57,7 +61,15 @@ InitilizeForm()
       personalNumber: new FormControl(this.currentRider.personalNumber),
       emirateId: new FormControl(this.currentRider.emirateId),
       passportNumber: new FormControl(this.currentRider.passportNumber), 
+      licensenumber: new FormControl(this.currentRider.licenseNumber),
+      rriderid: new FormControl(this.currentRider.rriderId),
+      emissuedate: new FormControl(formatDate(this.currentRider.emIssuedate,'yyyy-MM-dd','en')),
+      emexpiredate: new FormControl(formatDate(this.currentRider.emExpiredate,'yyyy-MM-dd','en')),
+      labourCard: new FormControl(this.currentRider.labourCard),
+      lbissuedate: new FormControl(formatDate(this.currentRider.lbIssuedate,'yyyy-MM-dd','en')),
+      lbExpiredate: new FormControl(formatDate(this.currentRider.lbExpiredate,'yyyy-MM-dd','en'))
     });
+    
   }
   else
   {
@@ -70,6 +82,13 @@ InitilizeForm()
         personalNumber: new FormControl(""),
         emirateId: new FormControl(""),
         passportNumber: new FormControl(""), 
+        licensenumber: new FormControl(""),
+        rriderid: new FormControl(""),
+        emissuedate: new FormControl(""),
+        emexpiredate: new FormControl(""),
+        labourCard: new FormControl(""),
+        lbissuedate: new FormControl(""),
+        lbexpiredate: new FormControl("")
       });
   }
 }
@@ -113,7 +132,7 @@ InitilizeForm()
     {
       // get the rider id
       console.log("Selected Rider is " + this.selectedRiderId);
-      console.log("Updated values " + this.riderForm.value);
+      // console.log("Updated values " + this.riderForm.value);
       this.riderService.updateRider(this.selectedRiderId, this.riderForm.value).subscribe({
         next: res=> console.log(res),
         error: error=>console.log(error),

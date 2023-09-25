@@ -59,6 +59,12 @@ namespace API.Controllers
                     targetedRider.Email = rider.Email;
                     targetedRider.EmirateId = rider.EmirateId;
                     targetedRider.Name = rider.Name;
+                    targetedRider.LabourCard = rider.LabourCard;
+                    targetedRider.EmExpiredate = rider.EmExpiredate;
+                    targetedRider.LbExpiredate = rider.LbExpiredate;
+                    targetedRider.LbIssuedate = rider.LbIssuedate;
+                    targetedRider.EmIssuedate = rider.EmIssuedate;
+                    targetedRider.RriderId = rider.RriderId;
                     try
                     {
                         await _dataContext.SaveChangesAsync();
@@ -68,7 +74,7 @@ namespace API.Controllers
                         // Handle concurrency exception if needed
                         return BadRequest(new Exception("Concurrency error occurred."));
                     }
-                    return StatusCode(StatusCodes.Status204NoContent);
+                    return targetedRider;
                 }
             }
             else

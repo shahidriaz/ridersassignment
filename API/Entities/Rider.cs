@@ -19,6 +19,12 @@ namespace API.Entities
         [Required]
         public string PassportNumber { get; set; } = string.Empty;
         public string LicenseNumber { get; set; } = string.Empty;
+        public string RriderId { get; set; } = string.Empty;
+        public DateTime? EmIssuedate { get; set; }
+        public DateTime? EmExpiredate { get; set; }
+        public string LabourCard { get; set; } = string.Empty;
+        public DateTime? LbIssuedate { get; set; }
+        public DateTime? LbExpiredate { get; set; }
 
         public RiderBikeAssociation? RiderBikeAssociation { get; set; }
 
