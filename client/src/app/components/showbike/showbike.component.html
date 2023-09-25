@@ -1,0 +1,45 @@
+
+<div class="container addTopSpacing">
+    <div class="row g-12">
+      <div class="col-md-12 col-lg-12">
+        <h4 class="mb-3">Bike's details</h4>
+        <form [formGroup]="bikeForm" class="needs-validation" novalidate="" (ngSubmit)="submitBike()"> 
+          <fieldset [disabled]="!isenable" *ngIf="currentBike">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="bikemodel" class="form-label">Bike Model</label>
+              <input formControlName="bikemodel" type="text" class="form-control" 
+              id="bikemodel" placeholder="Bike Model" required="">
+              <div class="invalid-feedback">
+                Valid name is required.
+              </div>
+            </div>
+          
+            <div class="col-6">
+              <label for="enginepower" class="form-label">Engine Power <span class="text-body-secondary">(Optional)</span></label>
+              <input formControlName = "enginepower" type="text" class="form-control" id="enginepower" placeholder="Engine Power">
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+  
+            <div class="col-6">
+              <label for="bikenumber" class="form-label">Bike Number</label>
+              <input formControlName = "bikenumber" type="text" class="form-control" id="bikenumber" 
+              placeholder="Bike Number">
+            </div>
+          </div>
+        </fieldset>
+        <div class="col-12" style="float: right; margin-top: 20px;">
+          <button class="btn btn-primary btn-lg" style="margin-right: 10px;" (click)="BackToBikeListing()">Back</button>
+          <button *ngIf="!isenable" class="btn btn-success btn-lg" (click)="editBike(currentBike.id)">Edit</button>
+          <button type="submit" *ngIf="isenable && !isNew" class="btn btn-success btn-lg">Update</button>
+          <button type="submit" *ngIf="!isenable"  class="btn btn-danger btn-lg" style="margin-left: 10px;">Delete</button>
+          <button type="submit" *ngIf="isNew"  class="btn btn-danger btn-lg" style="margin-left: 10px;">Create</button>
+        </div>
+        </form>
+      </div>
+    </div>  
+  </div>
+  
+  

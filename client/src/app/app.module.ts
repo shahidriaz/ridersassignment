@@ -10,6 +10,7 @@ import { ListbikesComponent } from './components/bikes/listbikes/listbikes.compo
 import { ListridersComponent } from './components/listriders/listriders.component';
 import { ShowriderComponent } from './components/showrider/showrider.component';
 import { EditRiderComponent } from './components/edit-rider/edit-rider.component';
+import { ShowBikeComponent } from './components/showbike/showbike.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EditRiderComponent } from './components/edit-rider/edit-rider.component
     ListbikesComponent,
     ListridersComponent,
     ShowriderComponent,
-    EditRiderComponent
+    EditRiderComponent,
+    ShowBikeComponent
   ],
   imports: [
     BrowserModule,
