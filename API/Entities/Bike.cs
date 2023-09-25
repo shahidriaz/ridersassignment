@@ -23,8 +23,6 @@ namespace API.Entities
         public DateTime? ExpireDate { get; set; }
 
         public string BikeOwner { get; set; } = string.Empty;
-        public string? EnginePower { get; set; }
-        [Required]
 
         public RiderBikeAssociation? RiderBikeAssociation { get; set; }
     }

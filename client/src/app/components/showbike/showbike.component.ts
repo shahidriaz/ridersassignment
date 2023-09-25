@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { BikeService } from 'src/app/__services/bike.service';
 import {FormGroup, FormControl, FormsModule} from '@angular/forms'
+import { formatDate } from '@angular/common' 
 
 @Component({
   selector: 'app-show-bike',
@@ -57,8 +58,8 @@ InitilizeForm()
       bikeNumber: new FormControl(this.currentBike.bikeNumber),
       mulkiyaNumber: new FormControl(this.currentBike.mulkiyaNumber),
       issueCity: new FormControl(this.currentBike.issueCity),
-      issueDate: new FormControl(this.currentBike.issueDate),
-      expiryDate: new FormControl(this.currentBike.expiryDate),
+      issueDate: new FormControl(formatDate(this.currentBike.issueDate,'yyyy-MM-dd','en')),
+      expireDate:new FormControl(formatDate(this.currentBike.expireDate,'yyyy-MM-dd','en')),
       bikeOwner: new FormControl(this.currentBike.bikeOwner),
 
     });
@@ -76,7 +77,7 @@ InitilizeForm()
         mulkiyaNumber: new FormControl(""),
         issueCity: new FormControl(""),
         issueDate: new FormControl(""),
-        expiryDate: new FormControl(""),
+        expireDate: new FormControl(""),
         bikeOwner: new FormControl(""),
       });
   }

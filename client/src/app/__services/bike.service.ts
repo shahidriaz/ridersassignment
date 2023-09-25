@@ -21,6 +21,8 @@ export class BikeService {
   }
   updateBike(id:number, data:string)
   {
+    console.log("selected Id of Bike in Service is " + id);
+    console.log("data to update " + data);
     return this.http.put(this.baseUrl + "/bike/" + id, data);
   }
   createBike(data:string)

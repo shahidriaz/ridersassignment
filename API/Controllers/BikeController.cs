@@ -58,7 +58,6 @@ namespace API.Controllers
                 {
                     bikeToUpdate.BikeNumber = bike.BikeNumber;
                     bikeToUpdate.BikeModel = bike.BikeModel;
-                    bikeToUpdate.EnginePower = bike.EnginePower;
                     bikeToUpdate.BikeChasis = bike.BikeChasis;
                     bikeToUpdate.MulkiyaNumber = bike.MulkiyaNumber;
                     bikeToUpdate.IssueCity = bike.IssueCity;
@@ -66,6 +65,7 @@ namespace API.Controllers
                     bikeToUpdate.BikeOwner = bike.BikeOwner;
                     bikeToUpdate.ExpireDate = bike.ExpireDate;
                     bikeToUpdate.IssueDate = bike.IssueDate;
+                    bikeToUpdate.BikeName = bike.BikeName;
                     try
                     {
                         await _datacontext.SaveChangesAsync();

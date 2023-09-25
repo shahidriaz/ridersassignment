@@ -14,7 +14,7 @@
             <th scope="col">Issue City</th>
             <th scope="col">Expiry Date</th>
             <th scope="col">Bike Owner</th>
-            <th scope="col">Assigned Rider</th>
+            <!-- <th scope="col">Assigned Rider</th> -->
 
             <th>Actions</th>
           </tr>
@@ -25,11 +25,11 @@
             <td>{{ item.bikeName }}</td>
             <td>{{item.bikeModel}}</td>
             <td>{{item.bikeNumber}}</td>
-            <td>{{item.MulkiyaNumber}}</td>
-            <td>{{item.IssuCity}}</td>
-            <td>{{item.ExpiryDate}}</td>
+            <td>{{item.mulkiyaNumber}}</td>
+            <td>{{item.issueCity}}</td>
+            <td>{{item.expireDate}}</td>
             <td>{{item.bikeOwner}}</td>
-            <td>{{item.AssignedRider}}</td>
+            <!-- <td>{{item.AssignedRider}}</td> -->
             <td>
               <button type="button" class="btn btn-info btn-sm" (click)="showDetails(item.id)">Detail</button>
               <button type="button" class="btn btn-primary btn-outline btn-sm" style="margin-left: 5px;" (click)="editRider(item.id)">Edit</button>
