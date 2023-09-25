@@ -52,13 +52,15 @@ namespace API.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    targetedRider.PersonalNumber = rider.PersonalNumber;
-                    targetedRider.LicenseNumber = rider.LicenseNumber;
-                    targetedRider.CompanyNumber = rider.CompanyNumber;
-                    targetedRider.PassportNumber = rider.PassportNumber;
-                    targetedRider.Email = rider.Email;
-                    targetedRider.EmirateId = rider.EmirateId;
-                    targetedRider.Name = rider.Name;
+                    // targetedRider.PersonalNumber = rider.PersonalNumber;
+                    // targetedRider.LicenseNumber = rider.LicenseNumber;
+                    // targetedRider.CompanyNumber = rider.CompanyNumber;
+                    // targetedRider.PassportNumber = rider.PassportNumber;
+                    // targetedRider.Email = rider.Email;
+                    // targetedRider.EmirateId = rider.EmirateId;
+                    // targetedRider.Name = rider.Name;
+                    // targetedRider.LabourCard = rider.LabourCard;
+                    targetedRider = rider;
                     try
                     {
                         await _dataContext.SaveChangesAsync();
@@ -68,7 +70,7 @@ namespace API.Controllers
                         // Handle concurrency exception if needed
                         return BadRequest(new Exception("Concurrency error occurred."));
                     }
-                    return StatusCode(StatusCodes.Status204NoContent);
+                    return targetedRider;
                 }
             }
             else
