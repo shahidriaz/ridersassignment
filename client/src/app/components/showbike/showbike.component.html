@@ -7,8 +7,8 @@
           <fieldset [disabled]="!isenable" *ngIf="currentBike">
           <div class="row g-3">
             <div class="col-sm-3">
-              <label for="bikName" class="form-label"> Bike Name</label>
-              <select formControlName="City" class="form-select" id="bikeName">
+              <label for="bikeName" class="form-label"> Bike Name</label>
+              <select formControlName="bikeName" class="form-select" id="bikeName">
                 <option value="Honda">Honda</option>
                 <option value="Pulsar">Pulsar</option>
                 <option value="Saniya">Saniya</option>
@@ -48,11 +48,11 @@
             </div>
             <div class="col-3">
               <label for="MulkiyaNumber" class="form-label">Mulkiya Number</label>
-              <input formControlName="MulkiyaNumber" type="text" class="form-control" id="MulkiyaNumber" placeholder="Enter Mulkiya Number">
+              <input formControlName="mulkiyaNumber" type="text" class="form-control" id="MulkiyaNumber" placeholder="Enter Mulkiya Number">
             </div>
             <div class="col-3">
               <label for="IssueCity" class="form-label">Issue City</label>
-              <select formControlName="IssueCity" class="form-select" id="IssueCity">
+              <select formControlName="issueCity" class="form-select" id="IssueCity">
                 <option value="Sharjah">Sharjah</option>
                 <option value="Dubai">Dubai</option>
                 <option value="Ajman">Ajman</option>
@@ -67,7 +67,7 @@
           </div>
           <div class="col-3">
             <label for="ExpiryDate" class="form-label">Expiry Date</label>
-            <input formControlName="ExpiryDate" type="date" class="form-control" id="ExpiryDate">
+            <input formControlName="expiryDate" type="date" class="form-control" id="ExpiryDate">
         </div>
         <div class="col-3">
           <label for="bikeOwner" class="form-label"> Bike Owner</label>
@@ -78,10 +78,10 @@
             <option value="Other">Other</option>
           </select>
         </div>
-        <div class="col-3">
+        <!-- <div class="col-3">
           <label for="AssignedRider" class="form-label">Assigned Rider</label>
           <input formControlName="AssignedRider" type="text" class="form-control" id="AssignedRider" placeholder="Enter Rider ID">
-        </div>
+        </div> -->
           </div>
         </fieldset>
         <div class="col-12" style="float: right; margin-top: 20px;">

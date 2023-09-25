@@ -88,7 +88,7 @@ InitilizeForm()
         emexpiredate: new FormControl(""),
         labourCard: new FormControl(""),
         lbissuedate: new FormControl(""),
-        lbexpiredate: new FormControl("")
+        lbExpiredate: new FormControl("")
       });
   }
 }

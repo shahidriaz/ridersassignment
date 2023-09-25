@@ -50,9 +50,17 @@ InitilizeForm()
   {
     this.bikeForm = new FormGroup(
     {
-      bikemodel: new FormControl(this.currentBike.bikeModel),
-      enginepower: new FormControl(this.currentBike.enginePower),
-      bikenumber: new FormControl(this.currentBike.bikeNumber),
+      bikeName: new FormControl(this.currentBike.bikeName),
+      bikeColor: new FormControl(this.currentBike.bikeColor),
+      bikeModel: new FormControl(this.currentBike.bikeModel),
+      bikeChasis: new FormControl(this.currentBike.bikeChasis),
+      bikeNumber: new FormControl(this.currentBike.bikeNumber),
+      mulkiyaNumber: new FormControl(this.currentBike.mulkiyaNumber),
+      issueCity: new FormControl(this.currentBike.issueCity),
+      issueDate: new FormControl(this.currentBike.issueDate),
+      expiryDate: new FormControl(this.currentBike.expiryDate),
+      bikeOwner: new FormControl(this.currentBike.bikeOwner),
+
     });
   }
   else
@@ -60,9 +68,16 @@ InitilizeForm()
     this.currentBike = {};
     this.bikeForm = new FormGroup(
       {
-        bikemodel: new FormControl(""),
-        enginepower: new FormControl(""),
-        bikenumber: new FormControl("")
+        bikeName: new FormControl(""),
+        bikeColor: new FormControl(""),
+        bikeModel: new FormControl(""),
+        bikeChasis: new FormControl(""),
+        bikeNumber: new FormControl(""),
+        mulkiyaNumber: new FormControl(""),
+        issueCity: new FormControl(""),
+        issueDate: new FormControl(""),
+        expiryDate: new FormControl(""),
+        bikeOwner: new FormControl(""),
       });
   }
 }

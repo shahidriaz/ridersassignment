@@ -28,6 +28,8 @@ export class RiderService {
   }
   createRider(data:string)
   {
+    console.log("From Rider Service");
+    console.log(data);
     return this.http.post(this.baseUrl + "/rider/", data);
   }
 }
