@@ -25,6 +25,10 @@ namespace API.Entities
         public string LabourCard { get; set; } = string.Empty;
         public DateTime? LbIssuedate { get; set; }
         public DateTime? LbExpiredate { get; set; }
+        public string? WorkingCity { get; set; }
+        public string? WorkingStatus { get; set; }
+        public string? VisaSponsor { get; set; }
+        public string? VisaCategory { get; set; }
 
         public RiderBikeAssociation? RiderBikeAssociation { get; set; }
 

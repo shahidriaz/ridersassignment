@@ -67,7 +67,11 @@ InitilizeForm()
       emexpiredate: new FormControl(formatDate(this.currentRider.emExpiredate,'yyyy-MM-dd','en')),
       labourCard: new FormControl(this.currentRider.labourCard),
       lbissuedate: new FormControl(formatDate(this.currentRider.lbIssuedate,'yyyy-MM-dd','en')),
-      lbExpiredate: new FormControl(formatDate(this.currentRider.lbExpiredate,'yyyy-MM-dd','en'))
+      lbExpiredate: new FormControl(formatDate(this.currentRider.lbExpiredate,'yyyy-MM-dd','en')),
+      workingCity: new FormControl(this.currentRider.workingCity),
+      workingStatus: new FormControl(this.currentRider.workingStatus),
+      visaSponsor: new FormControl(this.currentRider.visaSponsor),
+      visaCategory: new FormControl(this.currentRider.visaCategory)
     });
     
   }
@@ -88,7 +92,11 @@ InitilizeForm()
         emexpiredate: new FormControl(""),
         labourCard: new FormControl(""),
         lbissuedate: new FormControl(""),
-        lbExpiredate: new FormControl("")
+        lbExpiredate: new FormControl(""),
+        workingCity: new FormControl(""),
+      workingStatus: new FormControl(""),
+      visaSponsor: new FormControl(""),
+      visaCategory: new FormControl("")
       });
   }
 }

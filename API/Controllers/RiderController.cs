@@ -65,6 +65,10 @@ namespace API.Controllers
                     targetedRider.LbIssuedate = rider.LbIssuedate;
                     targetedRider.EmIssuedate = rider.EmIssuedate;
                     targetedRider.RriderId = rider.RriderId;
+                    targetedRider.WorkingCity = rider.WorkingCity;
+                    targetedRider.WorkingStatus = rider.WorkingStatus;
+                    targetedRider.VisaSponsor = rider.VisaSponsor;
+                    targetedRider.VisaCategory = rider.VisaCategory;
                     try
                     {
                         await _dataContext.SaveChangesAsync();
