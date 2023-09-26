@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { BikeService } from 'src/app/__services/bike.service';
 import {FormGroup, FormControl, FormsModule} from '@angular/forms'
 import { formatDate } from '@angular/common' 
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-show-bike',
@@ -18,7 +19,7 @@ export class ShowBikeComponent {
   bikeForm: FormGroup = new FormGroup({});
   selectedBikeId: number = 0;
   constructor(private bikeService: BikeService, 
-    private router: Router, private route: ActivatedRoute)
+    private router: Router, private route: ActivatedRoute, private toaster: ToastrService)
   {
     
   }
@@ -111,7 +112,10 @@ InitilizeForm()
     {
       // get the Bike id
       this.bikeService.deleteBike(this.selectedBikeId).subscribe({
-        next: res=> console.log("Bike deleted successfully!"),
+        next: res=> {
+          this.toaster.success("Bike deleted successfully!");
+          setTimeout(()=>this.BackToBikeListing(), 3000);
+        }, 
         error: error=>console.log(error),
         complete: ()=>console.log("Done")
       });
@@ -123,7 +127,11 @@ InitilizeForm()
       console.log("Selected Bike is " + this.selectedBikeId);
       console.log("Updated values " + this.bikeForm.value);
       this.bikeService.updateBike(this.selectedBikeId, this.bikeForm.value).subscribe({
-        next: res=> console.log(res),
+        next: res=> 
+        {
+          this.toaster.success("Bike updated successfully");
+          setTimeout(()=>this.BackToBikeListing(), 3000)
+        },
         error: error=>console.log(error),
         complete: ()=>console.log("Done")
       });
@@ -133,7 +141,10 @@ InitilizeForm()
       // get the rider id
       console.log("Updated values " + this.bikeForm.value);
       this.bikeService.createBike(this.bikeForm.value).subscribe({
-        next: res=> console.log(res),
+        next: res=> {
+          this.toaster.success("Bike added successfully");
+          setTimeout(()=>this.BackToBikeListing,3000);
+        },
         error: error=>console.log(error),
         complete: ()=>console.log("Done")
       });

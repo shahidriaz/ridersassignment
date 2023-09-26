@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { RiderService } from 'src/app/__services/rider.service';
 import {FormGroup, FormControl, FormsModule} from '@angular/forms'
 import { formatDate } from '@angular/common' 
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -20,7 +21,7 @@ export class ShowriderComponent {
   riderForm: FormGroup = new FormGroup({});
   selectedRiderId: number = 0;
   constructor(private riderService: RiderService, 
-    private router: Router, private route: ActivatedRoute)
+    private router: Router, private route: ActivatedRoute, private toaster: ToastrService)
   {
     console.log("Constructor of all Riders");
   }
@@ -130,7 +131,10 @@ InitilizeForm()
     {
       // get the rider id
       this.riderService.deleteRider(this.selectedRiderId).subscribe({
-        next: res=> console.log("Rider deleted successfully!"),
+        next: res=> {
+          this.toaster.success("Rider deleted successfully!");
+          setTimeout(()=>this.BackToRiderListing(), 3000);
+        },
         error: error=>console.log(error),
         complete: ()=>console.log("Done")
       });
@@ -142,7 +146,10 @@ InitilizeForm()
       console.log("Selected Rider is " + this.selectedRiderId);
       // console.log("Updated values " + this.riderForm.value);
       this.riderService.updateRider(this.selectedRiderId, this.riderForm.value).subscribe({
-        next: res=> console.log(res),
+        next: res=> {
+          this.toaster.success("Rider updated successfully")
+          setTimeout(()=>this.BackToRiderListing(), 3000);
+        },
         error: error=>console.log(error),
         complete: ()=>console.log("Done")
       });
@@ -152,7 +159,10 @@ InitilizeForm()
       // get the rider id
       console.log("Updated values " + this.riderForm.value);
       this.riderService.createRider(this.riderForm.value).subscribe({
-        next: res=> console.log(res),
+        next: res=>{
+          this.toaster.success("Rider added successfully")
+          setTimeout(()=>this.BackToRiderListing(), 3000);
+        }, 
         error: error=>console.log(error),
         complete: ()=>console.log("Done")
       });

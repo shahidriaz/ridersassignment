@@ -11,6 +11,7 @@ import { ListridersComponent } from './components/listriders/listriders.componen
 import { ShowriderComponent } from './components/showrider/showrider.component';
 import { EditRiderComponent } from './components/edit-rider/edit-rider.component';
 import { ShowBikeComponent } from './components/showbike/showbike.component'
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ShowBikeComponent } from './components/showbike/showbike.component'
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
