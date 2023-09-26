@@ -1,0 +1,98 @@
+
+<div class="container addTopSpacing">
+  <div class="row g-12">
+    <div class="col-md-12 col-lg-12">
+      <h4 class="mb-3">Employee's details</h4>
+      <form [formGroup]="employeesForm" class="needs-validation" novalidate="" (ngSubmit)="submitEmployees()"> 
+        <fieldset [disabled]="!isenable" *ngIf="currentBike">
+        <div class="row g-3">
+          <div class="col-sm-3">
+            <label for="employeesName" class="form-label"> Employees Name</label>
+            <select formControlName="employeesName" class="form-select" id="employeesName">
+              <option value="Honda">Honda</option>
+              <option value="Pulsar">Pulsar</option>
+              <option value="Saniya">Saniya</option>
+              <option value="Folony">Folony</option>
+              <option value="Apache">Apache</option>
+            </select>
+          </div>
+        
+          <div class="col-3">
+            <label for="bikeColor" class="form-label"> Color</label>
+            <select formControlName="bikeColor" class="form-select" id="bikeColor">
+              <option value="Red">Red</option>
+              <option value="White">White</option>
+              <option value="Black">Black</option>
+              <option value="Blue">Blue</option>
+            </select>
+          </div>
+
+          <div class="col-3">
+            <label for="bikeModel" class="form-label"> Bike Model</label>
+            <select formControlName="bikeModel" class="form-select" id="bikeModel">
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <label for="bikeChasis" class="form-label"> Bike Chasis</label>
+            <input formControlName="bikeChasis" type="text" class="form-control" id="bikeChasis" placeholder="Enter Chasis Number">
+          </div>
+          <div class="col-3">
+            <label for="bikeNumber" class="form-label"> Bike Number</label>
+            <input formControlName="bikeNumber" type="text" class="form-control" id="bikeNumber" placeholder="Enter Bike Number">
+          </div>
+          <div class="col-3">
+            <label for="MulkiyaNumber" class="form-label">Mulkiya Number</label>
+            <input formControlName="mulkiyaNumber" type="text" class="form-control" id="MulkiyaNumber" placeholder="Enter Mulkiya Number">
+          </div>
+          <div class="col-3">
+            <label for="IssueCity" class="form-label">Issue City</label>
+            <select formControlName="issueCity" class="form-select" id="IssueCity">
+              <option value="Sharjah">Sharjah</option>
+              <option value="Dubai">Dubai</option>
+              <option value="Ajman">Ajman</option>
+              <option value="Abu Dhabi">Abu Dhabi</option>
+              <option value="RAK">RAK</option>
+              <option value="Al Ain">Al Ain</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <label for="issueDate" class="form-label">Issue Date</label>
+            <input formControlName="issueDate" type="date" class="form-control" id="issueDate">
+        </div>
+        <div class="col-3">
+          <label for="ExpiryDate" class="form-label">Expiry Date</label>
+          <input formControlName="expireDate" type="date" class="form-control" id="ExpiryDate">
+      </div>
+      <div class="col-3">
+        <label for="bikeOwner" class="form-label"> Bike Owner</label>
+        <select formControlName="bikeOwner" class="form-select" id="bikeOwner">
+          <option value="247 On Time">247 On Time</option>
+          <option value="EasyLease">EasyLease</option>
+          <option value="PowerLease">PowerLease</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <!-- <div class="col-3">
+        <label for="AssignedRider" class="form-label">Assigned Rider</label>
+        <input formControlName="AssignedRider" type="text" class="form-control" id="AssignedRider" placeholder="Enter Rider ID">
+      </div> -->
+        </div>
+      </fieldset>
+      <div class="col-12" style="float: right; margin-top: 20px;">
+        <button class="btn btn-primary btn-lg" style="margin-right: 10px;" (click)="BackToEmployeesListing()">Back</button>
+        <button *ngIf="!isenable" class="btn btn-success btn-lg" (click)="editBike(currentBike.id)">Edit</button>
+        <button type="submit" *ngIf="isenable && !isNew" class="btn btn-success btn-lg">Update</button>
+        <button type="submit" *ngIf="!isenable"  class="btn btn-danger btn-lg" style="margin-left: 10px;">Delete</button>
+        <button type="submit" *ngIf="isNew"  class="btn btn-danger btn-lg" style="margin-left: 10px;">Create</button>
+      </div>
+      </form>
+    </div>
+  </div>  
+</div>
+

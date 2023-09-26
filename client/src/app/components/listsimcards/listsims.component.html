@@ -1,0 +1,31 @@
+<div class="container addTopSpacing">
+    <div class="table-responsive">
+      <div class="container">
+        <button class="btn btn-primary" style="float: right;" (click)="Add Sim()">Add Sim</button>
+      </div>
+        <table class="table table-hover table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Network</th>
+              <th scope="col">Company Number</th>
+              <th scope="col">Assigned Rider</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of allSims">
+              <th>{{ item.id }}</th>
+              <td>{{ item.network }}</td>
+              <td>{{ item.CompanyNumber }}</td>
+              <td>{{item.AssignedRider}}</td>
+              <td>
+                <button type="button" class="btn btn-info btn-sm" (click)="showDetails(item.id)">Detail</button>
+                <button type="button" class="btn btn-primary btn-outline btn-sm" style="margin-left: 5px;" (click)="editsim(item.id)">Edit</button>
+                <button type="button" class="btn btn-danger btn-outline btn-sm" style="margin-left: 5px;" (click)="deletesim(item.id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>
