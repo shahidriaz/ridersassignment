@@ -11,6 +11,7 @@
               <th scope="col">Personal Number</th>
               <th scope="col">EmirateId</th>
               <th scope="col">LicenseNumber</th>
+              <th scope="col">Assigned Bike</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -21,10 +22,14 @@
               <td>{{ item.personalNumber }}</td>
               <td>{{item.emirateId}}</td>
               <td>{{item.licenseNumber}}</td>
+              <td>{{item.bikeInfo}}
+              <span [hidden]="true">{{item.bikeId}}</span>
+              </td>
               <td>
                 <button type="button" class="btn btn-info btn-sm" (click)="showDetails(item.id)">Detail</button>
                 <button type="button" class="btn btn-primary btn-outline btn-sm" style="margin-left: 5px;" (click)="editRider(item.id)">Edit</button>
                 <button type="button" class="btn btn-danger btn-outline btn-sm" style="margin-left: 5px;" (click)="deleteRider(item.id)">Delete</button>
+                <button *ngIf="item.bikeId>0"  type="button" class="btn btn btn-warning btn-sm" style="margin-left: 5px;" (click)="UnAssignBike(item)">Unassign Bike</button>
               </td>
             </tr>
           </tbody>

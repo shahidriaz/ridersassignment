@@ -12,7 +12,7 @@ import { ShowriderComponent } from './components/showrider/showrider.component';
 import { EditRiderComponent } from './components/edit-rider/edit-rider.component';
 import { ShowBikeComponent } from './components/showbike/showbike.component'
 import { ToastrModule } from 'ngx-toastr';
-import { ListsimsComponent } from './components/listsims/listsims.component';
+
 
 @NgModule({
   declarations: [
@@ -22,8 +22,7 @@ import { ListsimsComponent } from './components/listsims/listsims.component';
     ListridersComponent,
     ShowriderComponent,
     EditRiderComponent,
-    ShowBikeComponent,
-    ListsimsComponent
+    ShowBikeComponent
   ],
   imports: [
     BrowserModule,

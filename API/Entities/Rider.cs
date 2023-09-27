@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace API.Entities
 {
-    public class Rider
+    public class BaseRider
     {
+
         public int Id { get; set; }
         [Required]
         public string Name { get; set; } = string.Empty;
@@ -29,7 +30,9 @@ namespace API.Entities
         public string? WorkingStatus { get; set; }
         public string? VisaSponsor { get; set; }
         public string? VisaCategory { get; set; }
-
+    }
+    public class Rider : BaseRider
+    {
         public RiderBikeAssociation? RiderBikeAssociation { get; set; }
 
     }

@@ -37,4 +37,9 @@ export class ListridersComponent {
   {
     this.router.navigate(["/create-rider/"]);
   }
+  UnAssignBike(completeItem: any):void
+  {
+    console.log(completeItem);
+    completeItem.bikeInfo = "";
+  }
 }

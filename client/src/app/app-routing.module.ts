@@ -6,7 +6,7 @@ import { ListbikesComponent } from './components/bikes/listbikes/listbikes.compo
 import { ShowriderComponent } from './components/showrider/showrider.component';
 import { EditRiderComponent } from './components/edit-rider/edit-rider.component';
 import { ShowBikeComponent } from './components/showbike/showbike.component';
-import { ListsimsComponent } from './components/listsims/listsims.component';
+
 
 const routes: Routes = [
   {path:'', component: ListridersComponent},
@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'edit-bike/:id', component: ShowBikeComponent},
   {path: 'delete-bike/:id', component: ShowBikeComponent},
   {path: 'create-bike', component: ShowBikeComponent},
-  {path: 'all-sims', component: ListsimsComponent},
+  
   
 
 ];

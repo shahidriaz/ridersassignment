@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.DTO;
 using API.Entities;
+using API.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,29 +22,66 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Rider>>> List()
+        public async Task<ActionResult<IEnumerable<RiderDTO>>> List()
         {
-            return await _dataContext.Riders.ToListAsync();
+            var allRiders = await _dataContext.Riders.Include(x => x.RiderBikeAssociation).ToListAsync();
+            List<RiderDTO> allRidersDTO = new List<RiderDTO>();
+            foreach (Rider r in allRiders)
+            {
+                var riderDTO = r.ToRiderDTO();
+                if (r != null && r.RiderBikeAssociation != null)
+                {
+                    var bikeInfo = await _dataContext.Bikes.FirstAsync(x => x.Id == r.RiderBikeAssociation.BikeId);
+                    if (bikeInfo != null)
+                    {
+                        riderDTO.BikeId = bikeInfo.Id;
+                        riderDTO.BikeInfo = bikeInfo.BikeModel + "-" + bikeInfo.BikeName + "-" + bikeInfo.BikeNumber;
+                    }
+                }
+                allRidersDTO.Add(riderDTO);
+            }
+            return allRidersDTO;
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<Rider>> GetUser(int id)
+        public async Task<ActionResult<RiderDTO>> GetUser(int id)
         {
-            var rider = await _dataContext.Riders.FindAsync(id);
-            return rider;
+            var rider = await _dataContext.Riders.Include(x => x.RiderBikeAssociation).FirstAsync(x => x.Id == id);
+            RiderDTO riderDTO = rider.ToRiderDTO();
+            if (rider != null && rider.RiderBikeAssociation != null)
+            {
+                var bikeInfo = await _dataContext.Bikes.FirstAsync(x => x.Id == rider.RiderBikeAssociation.BikeId);
+                if (bikeInfo != null)
+                {
+                    riderDTO.BikeId = bikeInfo.Id;
+                    riderDTO.BikeInfo = bikeInfo.BikeModel + "-" + bikeInfo.BikeName + "-" + bikeInfo.BikeNumber;
+                }
+            }
+            return riderDTO;
         }
         [HttpPost]
-        public async Task<ActionResult<Rider>> Create(Rider rider)
+        public async Task<ActionResult<RiderDTO>> Create(RiderDTO rider)
         {
             if (ModelState.IsValid)
             {
-                await _dataContext.Riders.AddAsync(rider);
+                Rider r = rider.ToRider();
+                await _dataContext.Riders.AddAsync(r);
                 _dataContext.SaveChanges();
+                if (rider.BikeId != null)
+                {
+                    _dataContext.RiderBikeAssociations.Add(new RiderBikeAssociation()
+                    {
+                        BikeId = rider.BikeId,
+                        RiderId = r.Id
+                    });
+                    await _dataContext.SaveChangesAsync();
+
+                }
+                return rider;
             }
             else
             {
                 return BadRequest("Bad Request");
             }
-            return rider;
         }
         [HttpPut("{id}")]
         public async Task<ActionResult<Rider>> Update(int id, Rider rider)
