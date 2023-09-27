@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./listsims.component.css']
 })
 export class ListsimsComponent {
-
+  AddSim():void
+  {
+    console.log("hello world");
+  }
 }
